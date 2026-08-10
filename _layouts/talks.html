@@ -1,0 +1,84 @@
+---
+layout: base
+---
+
+{%- assign dated_talks = "" | split: "" -%}
+{%- for talk in site.events -%}
+  {%- assign talk_date = talk.talk_date | default: "" | strip -%}
+  {%- unless talk_date == "" -%}
+    {%- assign dated_talks = dated_talks | push: talk -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- assign sorted_talks = dated_talks | sort: "talk_date" -%}
+{%- assign site_seconds = site.time | date: "%s" | plus: 0 -%}
+{%- assign upcoming_talk = nil -%}
+
+{%- comment -%}
+Choose the first talk that has not ended. The normal talk schema needs no
+status field; the optional cancelled/postponed values are exceptional cases.
+{%- endcomment -%}
+{%- for talk in sorted_talks -%}
+  {%- assign talk_status = talk.status | default: "scheduled" | strip | downcase -%}
+  {%- assign talk_time = talk.start_time | default: "12:00 PM" | strip -%}
+  {%- assign talk_start = talk.talk_date | append: " " | append: talk_time -%}
+  {%- assign talk_start_seconds = talk_start | date: "%s" | plus: 0 -%}
+  {%- assign duration_minutes = talk.duration_minutes | default: 60 | plus: 0 -%}
+  {%- assign duration_seconds = duration_minutes | times: 60 -%}
+  {%- assign talk_cutoff_seconds = talk_start_seconds | plus: duration_seconds -%}
+  {%- unless talk_status == "cancelled" or talk_status == "postponed" -%}
+    {%- if talk_cutoff_seconds > site_seconds -%}
+      {%- assign upcoming_talk = talk -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<div class="talks-page">
+  <header class="talks-introduction">
+    <h1 class="page-heading">{{ page.title | default: site.title | escape }}</h1>
+    <div class="talks-introduction-content">
+      {{ content }}
+    </div>
+  </header>
+
+  <section id="upcoming" class="talks-section talks-section--upcoming" aria-labelledby="upcoming-heading">
+    <h2 id="upcoming-heading">Upcoming Talk</h2>
+    {%- if upcoming_talk -%}
+      {% include upcoming-talk.html talk=upcoming_talk %}
+    {%- else -%}
+      <p class="empty-state">The next talk will be announced soon.</p>
+    {%- endif -%}
+  </section>
+
+  <section id="talks" class="talks-section talks-section--archive" aria-labelledby="talks-heading">
+    <h2 id="talks-heading">All Talks</h2>
+
+    {%- assign semester_ids = "" | split: "" -%}
+    {%- assign newest_first_talks = sorted_talks | reverse -%}
+    {%- for talk in newest_first_talks -%}
+      {%- assign semester_id = talk.semester | default: "" | strip -%}
+      {%- unless semester_id == "" -%}
+        {%- unless semester_ids contains semester_id -%}
+          {%- assign semester_ids = semester_ids | push: semester_id -%}
+        {%- endunless -%}
+      {%- endunless -%}
+    {%- endfor -%}
+
+    {%- assign displayed_talk_count = 0 -%}
+    {%- for semester_id in semester_ids -%}
+      {%- assign semester_parts = semester_id | split: "-" -%}
+      {%- assign semester_term = semester_parts[0] | replace: "_", " " | capitalize -%}
+      {%- assign semester_year = semester_parts[1] -%}
+      {%- capture semester_label -%}{{ semester_term }} {{ semester_year }}{%- endcapture -%}
+      {%- assign semester_talks = sorted_talks | where: "semester", semester_id -%}
+      {%- if semester_talks.size > 0 -%}
+        {% include talk-table.html talks=semester_talks label=semester_label id=semester_id %}
+        {%- assign displayed_talk_count = displayed_talk_count | plus: semester_talks.size -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if displayed_talk_count == 0 -%}
+      <p class="empty-state">Talks will be added here soon.</p>
+    {%- endif -%}
+  </section>
+</div>

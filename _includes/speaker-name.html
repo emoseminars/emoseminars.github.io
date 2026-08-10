@@ -1,0 +1,12 @@
+{%- assign talk = include.talk -%}
+{%- assign speaker = talk.speaker | default: "" | strip -%}
+{%- assign affiliation = talk.affiliation | default: "" | strip -%}
+{%- assign speaker_url = talk.speaker_url | default: "" | strip -%}
+{%- unless speaker_url == "" -%}
+  <a class="speaker-name" href="{{ speaker_url | escape }}">{{ speaker | escape }}</a>
+{%- else -%}
+  <span class="speaker-name">{{ speaker | escape }}</span>
+{%- endunless -%}
+{%- unless affiliation == "" -%}
+  <span class="speaker-affiliation"> ({{ affiliation | escape }})</span>
+{%- endunless -%}

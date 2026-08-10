@@ -1,0 +1,68 @@
+title: EMO Talks
+lang: en
+url: "https://emoseminars.github.io"
+baseurl: ""
+repository: emoseminars/emoseminars.github.io
+
+author:
+  name: EMO Talks organizers
+
+description: >-
+  EMO Talks is an online seminar series featuring invited research
+  presentations and discussion.
+
+# Square compact mark used beside the title and as the favicon.
+icon: /assets/images/emo-talks-icon.svg
+
+# Optional official horizontal wordmark. When `path` is supplied, it replaces
+# the compact mark/title treatment in the header without becoming the favicon.
+# Set `includes_title` to false if visible "EMO Talks" text should remain beside it.
+header_logo:
+  path:
+  width: 240
+  height: 56
+  includes_title: true
+
+theme_color: "#111111"
+
+seminar:
+  event_date_format: "%A, %B %-d, %Y at %-I:%M %p"
+  table_date_format: "%b %-d, %Y"
+  detail_date_format: "%m/%d/%Y"
+  timezone_label: ET
+
+collections:
+  events:
+    output: true
+    permalink: /talks/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
+
+# Jekyll applies EST/EDT automatically to the advertised Eastern clock time.
+timezone: America/New_York
+
+plugins:
+  - jekyll-seo-tag
+
+# Keep development and organizer-only files out of the public site.
+exclude:
+  - _events/example_talk.md
+  - .bundle
+  - .gitignore
+  - .jekyll-cache
+  - .ruby-version
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - LICENSES
+  - README.md
+  - task_plan.md
+  - findings.md
+  - progress.md
+  - script
+  - vendor

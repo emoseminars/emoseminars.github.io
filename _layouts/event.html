@@ -1,0 +1,101 @@
+---
+layout: base
+---
+{%- assign event_date_format = site.seminar.event_date_format | default: "%A, %B %-d, %Y at %-I:%M %p" -%}
+{%- assign detail_date_format = site.seminar.detail_date_format | default: "%m/%d/%Y" -%}
+{%- assign timezone_label = site.seminar.timezone_label | default: "ET" -%}
+{%- assign talk_time = page.start_time | default: "12:00 PM" | strip -%}
+{%- assign talk_start = page.talk_date | append: " " | append: talk_time -%}
+{%- assign registration_url = page.registration_url | default: "" | strip -%}
+{%- assign join_url = page.join_url | default: page.meeting_url | default: "" | strip -%}
+{%- assign zoom_url = "" -%}
+{%- assign zoom_link_text = "" -%}
+{%- unless registration_url == "" -%}
+  {%- assign zoom_url = registration_url -%}
+  {%- assign zoom_link_text = "Register for the webinar" -%}
+{%- else -%}
+  {%- unless join_url == "" -%}
+    {%- assign zoom_url = join_url -%}
+    {%- assign zoom_link_text = "Join the webinar" -%}
+  {%- endunless -%}
+{%- endunless -%}
+{%- assign recording_url = page.recording_url | default: "" | strip -%}
+{%- assign speaker_bio = page.bio | default: "" | strip -%}
+{%- assign front_matter_abstract = page.abstract | default: "" | strip -%}
+{%- assign talk_body = content | strip -%}
+{%- assign talk_image = page.image | default: "" | strip -%}
+{%- if talk_image == "" -%}
+  {%- assign hero_modifier = " event-page-hero--without-image" -%}
+{%- else -%}
+  {%- assign hero_modifier = "" -%}
+{%- endif -%}
+
+<article class="event-page h-event">
+  <p class="event-page-back"><a href="{{ '/#talks' | relative_url }}">&larr; All talks</a></p>
+
+  <h1 class="event-page-heading">
+    Talk Information
+    <span class="event-page-heading-date">{{ page.talk_date | date: detail_date_format }}</span>
+  </h1>
+
+  <div class="event-page-hero{{ hero_modifier }}">
+    {%- unless talk_image == "" -%}
+      {%- assign image_alt = page.image_alt | default: "" | strip -%}
+      {%- if talk_image contains "://" -%}
+        {%- assign image_url = talk_image -%}
+      {%- else -%}
+        {%- assign image_url = talk_image | relative_url -%}
+      {%- endif -%}
+      <img class="event-page-image" src="{{ image_url | escape }}" alt="{{ image_alt | escape }}">
+    {%- endunless -%}
+
+    <div class="event-page-details">
+      <h2 class="event-page-talk-title p-name">
+        <span class="event-page-inline-label">Title:</span>
+        {{ page.title | escape }}
+      </h2>
+
+      <dl class="event-page-meta">
+        <dt>Speaker</dt>
+        <dd class="p-speaker">{% include speaker-name.html talk=page %}</dd>
+
+        <dt>Date and Time</dt>
+        <dd>
+          <time class="dt-start" datetime="{{ talk_start | date_to_xmlschema }}">
+            {{- talk_start | date: event_date_format }} {{ timezone_label | escape -}}
+          </time>
+        </dd>
+
+        {%- unless zoom_url == "" -%}
+          <dt>Zoom</dt>
+          <dd><a class="meeting-link" href="{{ zoom_url | escape }}">{{ zoom_link_text | escape }}</a></dd>
+        {%- endunless -%}
+
+        {%- unless recording_url == "" -%}
+          <dt>Recording</dt>
+          <dd><a href="{{ recording_url | escape }}">Watch the video</a></dd>
+        {%- endunless -%}
+      </dl>
+    </div>
+  </div>
+
+  <div class="event-page-body">
+    {%- if front_matter_abstract != "" or talk_body != "" -%}
+      <section class="event-page-section e-content" aria-labelledby="abstract-heading">
+        <h2 id="abstract-heading">Abstract</h2>
+        {%- unless front_matter_abstract == "" -%}
+          {{ page.abstract | markdownify }}
+        {%- else -%}
+          {{ content }}
+        {%- endunless -%}
+      </section>
+    {%- endif -%}
+
+    {%- unless speaker_bio == "" -%}
+      <section class="event-page-section" aria-labelledby="bio-heading">
+        <h2 id="bio-heading">Bio</h2>
+        {{ page.bio | markdownify }}
+      </section>
+    {%- endunless -%}
+  </div>
+</article>

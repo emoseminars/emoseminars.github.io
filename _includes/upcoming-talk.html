@@ -1,0 +1,77 @@
+{%- assign talk = include.talk -%}
+{%- assign event_date_format = site.seminar.event_date_format | default: "%A, %B %-d, %Y at %-I:%M %p" -%}
+{%- assign timezone_label = site.seminar.timezone_label | default: "ET" -%}
+{%- assign talk_time = talk.start_time | default: "12:00 PM" | strip -%}
+{%- assign talk_start = talk.talk_date | append: " " | append: talk_time -%}
+{%- assign talk_image = talk.image | default: "" | strip -%}
+{%- assign registration_url = talk.registration_url | default: "" | strip -%}
+{%- assign join_url = talk.join_url | default: talk.meeting_url | default: "" | strip -%}
+{%- assign zoom_url = "" -%}
+{%- assign zoom_link_text = "" -%}
+{%- unless registration_url == "" -%}
+  {%- assign zoom_url = registration_url -%}
+  {%- assign zoom_link_text = "Register for the webinar" -%}
+{%- else -%}
+  {%- unless join_url == "" -%}
+    {%- assign zoom_url = join_url -%}
+    {%- assign zoom_link_text = "Join the webinar" -%}
+  {%- endunless -%}
+{%- endunless -%}
+{%- if talk_image == "" -%}
+  {%- assign image_modifier = " upcoming-talk--without-image" -%}
+{%- else -%}
+  {%- assign image_modifier = "" -%}
+{%- endif -%}
+
+<article class="upcoming-talk{{ image_modifier }}">
+  {%- unless talk_image == "" -%}
+    {%- assign image_alt = talk.image_alt | default: "" | strip -%}
+    {%- if talk_image contains "://" -%}
+      {%- assign image_url = talk_image -%}
+    {%- else -%}
+      {%- assign image_url = talk_image | relative_url -%}
+    {%- endif -%}
+    <img class="upcoming-talk-image" src="{{ image_url | escape }}" alt="{{ image_alt | escape }}">
+  {%- endunless -%}
+
+  <div class="upcoming-talk-details">
+    <h3 class="upcoming-talk-title">
+      <a href="{{ talk.url | relative_url }}">{{ talk.title | escape }}</a>
+    </h3>
+
+    <dl class="upcoming-talk-meta">
+      <dt>Speaker</dt>
+      <dd>{% include speaker-name.html talk=talk %}</dd>
+
+      <dt>Date and time</dt>
+      <dd>
+        <time datetime="{{ talk_start | date_to_xmlschema }}">
+          {{- talk_start | date: event_date_format }} {{ timezone_label | escape -}}
+        </time>
+      </dd>
+
+      {%- unless zoom_url == "" -%}
+        <dt>Zoom</dt>
+        <dd><a class="meeting-link" href="{{ zoom_url | escape }}">{{ zoom_link_text | escape }}</a></dd>
+      {%- endunless -%}
+    </dl>
+
+    {%- assign talk_abstract = talk.abstract | default: talk.content | default: "" | strip -%}
+    {%- assign speaker_bio = talk.bio | default: "" | strip -%}
+    {%- if talk_abstract != "" or speaker_bio != "" -%}
+      <details class="upcoming-talk-more">
+        <summary>Abstract and Bio</summary>
+        <div class="upcoming-talk-more-content">
+          {%- unless talk_abstract == "" -%}
+            <h4>Abstract</h4>
+            {{ talk_abstract | markdownify }}
+          {%- endunless -%}
+          {%- unless speaker_bio == "" -%}
+            <h4>Bio</h4>
+            {{ talk.bio | markdownify }}
+          {%- endunless -%}
+        </div>
+      </details>
+    {%- endif -%}
+  </div>
+</article>

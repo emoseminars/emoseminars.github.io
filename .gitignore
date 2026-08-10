@@ -1,0 +1,14 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/bundle/
+.DS_Store
+._*
+Icon?
+
+# Persistent planning notes stay local and are excluded from the public build.
+task_plan.md
+findings.md
+progress.md

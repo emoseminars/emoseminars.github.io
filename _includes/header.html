@@ -1,0 +1,33 @@
+<header class="site-header">
+
+  <div class="wrapper">
+    {%- assign site_icon = site.icon | default: "" | strip -%}
+    {%- assign header_logo = site.header_logo.path | default: "" | strip -%}
+    {%- assign header_logo_width = site.header_logo.width | default: 240 -%}
+    {%- assign header_logo_height = site.header_logo.height | default: 56 -%}
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+      {%- unless header_logo == "" -%}
+        {%- assign header_logo_alt = "" -%}
+        {%- if site.header_logo.includes_title == true -%}
+          {%- assign header_logo_alt = site.title -%}
+        {%- endif -%}
+        <img class="site-title-logo" src="{{ header_logo | relative_url }}" width="{{ header_logo_width }}" height="{{ header_logo_height }}" alt="{{ header_logo_alt | escape }}">
+        {%- unless site.header_logo.includes_title == true -%}
+          <span>{{ site.title | escape }}</span>
+        {%- endunless -%}
+      {%- else -%}
+        {%- unless site_icon == "" -%}
+          <img class="site-title-icon" src="{{ site_icon | relative_url }}" width="36" height="36" alt="" aria-hidden="true">
+        {%- endunless -%}
+        <span>{{ site.title | escape }}</span>
+      {%- endunless -%}
+    </a>
+
+    <nav class="site-nav site-nav--single-page" aria-label="EMO Talks navigation">
+      <div class="trigger">
+        <a class="page-link" href="{{ "/#upcoming" | relative_url }}">Upcoming</a>
+        <a class="page-link" href="{{ "/#talks" | relative_url }}">All talks</a>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,5 @@
+{%- assign site_icon = site.icon | default: "" | strip -%}
+{%- unless site_icon == "" -%}
+  <link rel="icon" href="{{ site_icon | relative_url }}">
+{%- endunless -%}
+<meta name="theme-color" content="{{ site.theme_color | default: '#111111' | escape }}">

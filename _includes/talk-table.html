@@ -1,0 +1,42 @@
+{%- assign table_date_format = site.seminar.table_date_format | default: "%b %-d, %Y" -%}
+{%- assign heading_id = include.id | slugify | append: "-heading" -%}
+
+<section class="semester" aria-labelledby="{{ heading_id | escape }}">
+  <h3 id="{{ heading_id | escape }}">{{ include.label | escape }}</h3>
+  <div class="talk-table-wrapper" role="region" aria-labelledby="{{ heading_id | escape }}" tabindex="0">
+    <table class="talk-table" aria-labelledby="{{ heading_id | escape }}">
+      <colgroup>
+        <col class="talk-table-date-column">
+        <col class="talk-table-speaker-column">
+        <col class="talk-table-title-column">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Speaker</th>
+          <th scope="col">Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for talk in include.talks -%}
+          {%- assign talk_status = talk.status | default: "scheduled" | strip | downcase -%}
+          {%- assign recording_url = talk.recording_url | default: "" | strip -%}
+          <tr class="talk-row talk-row--{{ talk_status | slugify }}">
+            <td class="talk-date" data-label="Date">
+              <time datetime="{{ talk.talk_date | date: "%Y-%m-%d" }}">
+                {{- talk.talk_date | date: table_date_format -}}
+              </time>
+              {%- if talk_status == "cancelled" or talk_status == "postponed" -%}
+                <span class="talk-status"> ({{ talk_status | capitalize }})</span>
+              {%- endif -%}
+            </td>
+            <td class="talk-speaker" data-label="Speaker">{% include speaker-name.html talk=talk %}</td>
+            <td class="talk-title-cell" data-label="Title">
+              <a class="talk-title" href="{{ talk.url | relative_url }}">{{ talk.title | escape }}</a>{% unless recording_url == "" %} <a class="talk-video-link" href="{{ recording_url | escape }}" aria-label="Video recording of {{ talk.title | escape }}">[Video]</a>{% endunless %}
+            </td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+</section>
