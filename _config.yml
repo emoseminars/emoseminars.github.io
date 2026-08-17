@@ -1,4 +1,5 @@
 title: EMO Talks
+tagline: Energy, Markets, and Optimization Talks
 lang: en
 url: "https://emoseminars.github.io"
 baseurl: ""
@@ -8,8 +9,8 @@ author:
   name: EMO Talks organizers
 
 description: >-
-  EMO Talks is an online seminar series featuring invited research
-  presentations and discussion.
+  EMO (Energy, Markets, and Optimization) Talks, a biweekly interdisciplinary
+  webinar series on energy and sustainability
 
 # Square compact mark used beside the title and as the favicon.
 icon: /assets/images/emo-talks-icon.svg

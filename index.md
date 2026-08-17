@@ -1,6 +1,12 @@
 ---
 layout: talks
 title: EMO Talks
+description: "EMO (Energy, Markets, and Optimization) Talks, a biweekly interdisciplinary webinar series on energy and sustainability"
+image:
+  path: /assets/images/emo-social-card.png
+  width: 1200
+  height: 630
+  alt: EMO Talks logo
 ---
 
 Welcome to EMO (Energy, Markets, and Optimization) Talks, a biweekly webinar series bringing together researchers from Operations Management, Operations Research, and Electrical Engineering to advance research on energy and sustainability. 

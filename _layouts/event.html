@@ -34,7 +34,11 @@ layout: base
 
   <div class="event-page-hero{{ hero_modifier }}">
     {%- unless talk_image == "" -%}
-      {%- assign image_alt = page.image_alt | default: "" | strip -%}
+      {%- if talk_image contains "speaker-placeholder" -%}
+        {%- assign image_alt = "" -%}
+      {%- else -%}
+        {%- assign image_alt = page.speaker | default: "Speaker" | strip -%}
+      {%- endif -%}
       {%- if talk_image contains "://" -%}
         {%- assign image_url = talk_image -%}
       {%- else -%}

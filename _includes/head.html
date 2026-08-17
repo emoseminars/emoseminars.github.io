@@ -2,7 +2,40 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
+
+  {%- capture seo_output -%}{%- seo -%}{%- endcapture -%}
+  {%- if page.collection == "events" -%}
+    {%- assign event_date_format = site.seminar.event_date_format | default: "%A, %B %-d, %Y at %-I:%M %p" -%}
+    {%- assign timezone_label = site.seminar.timezone_label | default: "ET" -%}
+    {%- assign talk_time = page.start_time | default: "12:00 PM" | strip -%}
+    {%- assign talk_start = page.talk_date | append: " " | append: talk_time -%}
+    {%- assign speaker = page.speaker | default: "TBA" | strip -%}
+    {%- assign affiliation = page.affiliation | default: "" | strip -%}
+    {%- capture social_description -%}
+      {{- speaker -}}
+      {%- unless affiliation == "" %} ({{ affiliation }}){% endunless -%}
+      — {{ talk_start | date: event_date_format }} {{ timezone_label }}
+    {%- endcapture -%}
+
+    {%- comment -%}
+      Jekyll SEO Tag cannot build a description from multiple front-matter
+      fields. Keep its other metadata, remove only its generic description
+      tags, and add the automatically composed event description below.
+    {%- endcomment -%}
+    {%- assign seo_parts = seo_output | split: "<meta" -%}
+    {%- for seo_part in seo_parts -%}
+      {%- if forloop.first -%}
+        {{- seo_part -}}
+      {%- elsif seo_part contains 'name="description"' or seo_part contains 'property="og:description"' -%}
+      {%- else -%}
+        {{- "<meta" -}}{{- seo_part -}}
+      {%- endif -%}
+    {%- endfor -%}
+    <meta name="description" content="{{ social_description | strip | escape }}">
+    <meta property="og:description" content="{{ social_description | strip | escape }}">
+  {%- else -%}
+    {{- seo_output -}}
+  {%- endif -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 
   {%- include custom-head.html -%}

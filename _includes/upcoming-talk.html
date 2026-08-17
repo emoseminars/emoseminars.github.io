@@ -25,7 +25,11 @@
 
 <article class="upcoming-talk{{ image_modifier }}">
   {%- unless talk_image == "" -%}
-    {%- assign image_alt = talk.image_alt | default: "" | strip -%}
+    {%- if talk_image contains "speaker-placeholder" -%}
+      {%- assign image_alt = "" -%}
+    {%- else -%}
+      {%- assign image_alt = talk.speaker | default: "Speaker" | strip -%}
+    {%- endif -%}
     {%- if talk_image contains "://" -%}
       {%- assign image_url = talk_image -%}
     {%- else -%}

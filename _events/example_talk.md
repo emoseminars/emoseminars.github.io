@@ -20,9 +20,9 @@ duration_minutes: 60
 # Use term-year; the homepage creates and orders semester tables automatically.
 semester: fall-2026
 
-# Optional speaker image. Leave both fields blank when no image is available.
+# Optional speaker image; it is also used when sharing the talk page.
+# Leave this field blank when no image is available.
 image:
-image_alt:
 
 # Public Zoom access: fill in ONE of these fields, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.

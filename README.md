@@ -61,11 +61,12 @@ image is needed, put local images there, and configure them like this:
 
 ```yaml
 image: /assets/images/speakers/jane-doe.jpg
-image_alt: Portrait of Jane Doe
 ```
 
-Use meaningful alt text for every real headshot. Leave both fields blank when
-no image is available.
+The site automatically uses the speaker’s name as the image description for
+screen readers. Leave `image` blank when no image is available. Talk pages also
+use this image for social previews; the preview description is generated
+automatically from `speaker`, `affiliation`, `talk_date`, and `start_time`.
 
 ### Rescheduling, cancellation, and postponement
 
