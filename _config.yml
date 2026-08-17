@@ -43,6 +43,11 @@ defaults:
       type: events
     values:
       layout: event
+      image:
+        path: /assets/images/emo-social-card.png
+        width: 1200
+        height: 630
+        alt: EMO Talks logo
 
 # Jekyll applies EST/EDT automatically to the advertised Eastern clock time.
 timezone: America/New_York

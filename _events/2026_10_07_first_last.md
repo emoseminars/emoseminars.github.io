@@ -17,9 +17,9 @@ duration_minutes: 60
 # Use term-year; the homepage creates and orders semester tables automatically.
 semester: fall-2026
 
-# Placeholder image for now; it is also used when sharing the talk page.
+# Placeholder speaker image shown on the website.
 # Replace this path when a real headshot arrives.
-image: /assets/images/speaker-placeholder.svg
+speaker_image: /assets/images/speaker-placeholder.svg
 
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.

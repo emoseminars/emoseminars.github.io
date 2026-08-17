@@ -3,7 +3,7 @@
 {%- assign timezone_label = site.seminar.timezone_label | default: "ET" -%}
 {%- assign talk_time = talk.start_time | default: "12:00 PM" | strip -%}
 {%- assign talk_start = talk.talk_date | append: " " | append: talk_time -%}
-{%- assign talk_image = talk.image | default: "" | strip -%}
+{%- assign talk_image = talk.speaker_image | default: "" | strip -%}
 {%- assign registration_url = talk.registration_url | default: "" | strip -%}
 {%- assign join_url = talk.join_url | default: talk.meeting_url | default: "" | strip -%}
 {%- assign zoom_url = "" -%}

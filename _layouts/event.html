@@ -22,7 +22,7 @@ layout: base
 {%- assign speaker_bio = page.bio | default: "" | strip -%}
 {%- assign front_matter_abstract = page.abstract | default: "" | strip -%}
 {%- assign talk_body = content | strip -%}
-{%- assign talk_image = page.image | default: "" | strip -%}
+{%- assign talk_image = page.speaker_image | default: "" | strip -%}
 {%- if talk_image == "" -%}
   {%- assign hero_modifier = " event-page-hero--without-image" -%}
 {%- else -%}

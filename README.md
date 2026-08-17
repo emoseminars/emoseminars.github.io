@@ -60,13 +60,14 @@ Speaker images are optional. Create `assets/images/speakers/` when the first
 image is needed, put local images there, and configure them like this:
 
 ```yaml
-image: /assets/images/speakers/jane-doe.jpg
+speaker_image: /assets/images/speakers/jane-doe.jpg
 ```
 
 The site automatically uses the speaker’s name as the image description for
-screen readers. Leave `image` blank when no image is available. Talk pages also
-use this image for social previews; the preview description is generated
-automatically from `speaker`, `affiliation`, `talk_date`, and `start_time`.
+screen readers. Leave `speaker_image` blank when no image is available. Speaker
+images appear on the website, while shared talk links use the EMO logo card.
+The preview description is generated automatically from `speaker`,
+`affiliation`, `talk_date`, and `start_time`.
 
 ### Rescheduling, cancellation, and postponement
 
