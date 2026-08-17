@@ -13,8 +13,8 @@ speaker_url:
 
 # These defaults are easy to change for a rescheduled or shorter talk.
 # The site's America/New_York timezone supplies EST/EDT automatically.
-talk_date: "2026-09-29"
-start_time: "12:00 PM"
+talk_date: "2026-09-23"
+start_time: "3:00 PM"
 duration_minutes: 60
 
 # Use term-year; the homepage creates and orders semester tables automatically.

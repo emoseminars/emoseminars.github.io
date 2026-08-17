@@ -20,8 +20,8 @@ excluded from the published site.
 ### Date, time, and semester
 
 ```yaml
-talk_date: "2026-09-29"
-start_time: "12:00 PM"
+talk_date: "2026-09-23"
+start_time: "3:00 PM"
 duration_minutes: 60
 semester: fall-2026
 ```
