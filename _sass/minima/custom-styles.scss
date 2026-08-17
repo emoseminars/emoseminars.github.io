@@ -457,20 +457,6 @@ a.speaker-name {
   font-size: 0.9375rem;
 }
 
-.event-page-heading {
-  margin: 0 0 1rem;
-  color: var(--emo-black);
-  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  font-weight: 750;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.event-page-heading-date {
-  font-weight: 400;
-  white-space: nowrap;
-}
-
 .event-page-hero {
   display: grid;
   grid-template-columns: minmax(8rem, 10.5rem) minmax(0, 1fr);

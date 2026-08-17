@@ -2,7 +2,6 @@
 layout: base
 ---
 {%- assign event_date_format = site.seminar.event_date_format | default: "%A, %B %-d, %Y at %-I:%M %p" -%}
-{%- assign detail_date_format = site.seminar.detail_date_format | default: "%m/%d/%Y" -%}
 {%- assign timezone_label = site.seminar.timezone_label | default: "ET" -%}
 {%- assign talk_time = page.start_time | default: "12:00 PM" | strip -%}
 {%- assign talk_start = page.talk_date | append: " " | append: talk_time -%}
@@ -33,11 +32,6 @@ layout: base
 <article class="event-page h-event">
   <p class="event-page-back"><a href="{{ '/#talks' | relative_url }}">&larr; All talks</a></p>
 
-  <h1 class="event-page-heading">
-    Talk Information
-    <span class="event-page-heading-date">{{ page.talk_date | date: detail_date_format }}</span>
-  </h1>
-
   <div class="event-page-hero{{ hero_modifier }}">
     {%- unless talk_image == "" -%}
       {%- assign image_alt = page.image_alt | default: "" | strip -%}
@@ -50,10 +44,10 @@ layout: base
     {%- endunless -%}
 
     <div class="event-page-details">
-      <h2 class="event-page-talk-title p-name">
+      <h1 class="event-page-talk-title p-name">
         <span class="event-page-inline-label">Title:</span>
         {{ page.title | escape }}
-      </h2>
+      </h1>
 
       <dl class="event-page-meta">
         <dt>Speaker</dt>
