@@ -9,4 +9,4 @@ Our goal is to foster cross-community dialogue around the newest methodological 
 
 EMO Talks are organized by [Jerry Anunrojwong](https://jerryanunroj.github.io), [Cheng Guo](https://chengg04.github.io), and [Junjie Qin](https://engineering.purdue.edu/people/junjie.qin.1). 
 
-**Time**: 3:00 pm ET, biweekly on Wednesdays
+**Time**: 3:00PM ET, biweekly on Wednesdays
