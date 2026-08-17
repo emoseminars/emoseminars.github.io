@@ -18,9 +18,9 @@ icon: /assets/images/emo-talks-icon.svg
 # the compact mark/title treatment in the header without becoming the favicon.
 # Set `includes_title` to false if visible "EMO Talks" text should remain beside it.
 header_logo:
-  path:
-  width: 240
-  height: 56
+  path: /assets/images/emo-logo-cropped.png
+  width: 760
+  height: 340
   includes_title: true
 
 theme_color: "#111111"
