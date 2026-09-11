@@ -1,6 +1,6 @@
-# EMO Talks website
+# EMO Seminar website
 
-Source for the EMO Talks website at <https://emoseminars.github.io/>.
+Source for the EMO Seminar website at <https://emoseminars.github.io/>.
 
 Each Markdown file in `_events/` supplies the upcoming-talk card, its semester
 table row, and its talk-information page.
@@ -87,11 +87,11 @@ silently.
 ## Change the logo
 
 `icon` in `_config.yml` controls the square header icon and favicon. Replace
-`assets/images/emo-talks-icon.svg` with the official square mark, or change the
+`assets/images/emo-seminar-icon.svg` with the official square mark, or change the
 configured path.
 
 For a wide wordmark, set `header_logo.path` in `_config.yml`. Set
-`includes_title: true` when the image already contains “EMO Talks”; otherwise
+`includes_title: true` when the image already contains “EMO Seminar”; otherwise
 use `false` so the text title remains visible.
 
 ## Preview locally
@@ -136,7 +136,7 @@ The public user/organization repository must be named
 ## Licensing
 
 The MIT licenses apply only to the website software derived from the upstream
-templates. EMO Talks site content, speaker-contributed materials, recordings,
+templates. EMO Seminar site content, speaker-contributed materials, recordings,
 images, and branding are not licensed under MIT and remain with their respective
 rights holders. See `LICENSE.md` for the complete scope and notices.
 

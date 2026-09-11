@@ -24,7 +24,7 @@ speaker_image: /assets/images/yury-300x300.jpeg
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.
 registration_url:
-join_url:
+join_url: https://yale.zoom.us/j/96521672373
 
 # Add the YouTube recording after the talk; leave blank beforehand.
 recording_url:

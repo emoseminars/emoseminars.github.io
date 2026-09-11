@@ -1,23 +1,23 @@
-title: EMO Talks
-tagline: Energy, Markets, and Optimization Talks
+title: EMO Seminar
+tagline: Energy, Markets, and Optimization Seminar
 lang: en
 url: "https://emoseminars.github.io"
 baseurl: ""
 repository: emoseminars/emoseminars.github.io
 
 author:
-  name: EMO Talks organizers
+  name: EMO Seminar organizers
 
 description: >-
-  EMO (Energy, Markets, and Optimization) Talks, a biweekly interdisciplinary
+  EMO (Energy, Markets, and Optimization) Seminar, a biweekly interdisciplinary
   webinar series on energy and sustainability
 
 # Square compact mark used beside the title and as the favicon.
-icon: /assets/images/emo-talks-icon.svg
+icon: /assets/images/emo-seminar-icon.svg
 
 # Optional official horizontal wordmark. When `path` is supplied, it replaces
 # the compact mark/title treatment in the header without becoming the favicon.
-# Set `includes_title` to false if visible "EMO Talks" text should remain beside it.
+# Set `includes_title` to false if visible "EMO Seminar" text should remain beside it.
 header_logo:
   path: /assets/images/emo-logo-cropped.png
   width: 760
@@ -47,7 +47,7 @@ defaults:
         path: /assets/images/emo-social-card.png
         width: 1200
         height: 630
-        alt: EMO Talks logo
+        alt: EMO Seminar logo
 
 # Jekyll applies EST/EDT automatically to the advertised Eastern clock time.
 timezone: America/New_York

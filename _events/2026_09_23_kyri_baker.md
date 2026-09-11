@@ -24,7 +24,7 @@ speaker_image: /assets/images/kyri_2021_th.jpg
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.
 registration_url:
-join_url:
+join_url: https://yale.zoom.us/j/95869356620
 
 # Add the YouTube recording after the talk; leave blank beforehand.
 recording_url:

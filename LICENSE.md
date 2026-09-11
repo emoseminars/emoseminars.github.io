@@ -3,15 +3,15 @@
 This repository contains website software and site content under different
 terms. The repository as a whole is **not** offered under the MIT License.
 
-## EMO Talks content and branding
+## EMO Seminar content and branding
 
-Copyright © 2026 EMO Talks organizers for original EMO Talks-owned content.
+Copyright © 2026 EMO Seminar organizers for original EMO Seminar-owned content.
 Speaker-contributed and third-party materials remain with their respective
 rights holders.
 
 Except for third-party materials and the website software described below,
 copyright in the original non-code content of this site is held by the EMO
-Talks organizers and/or the respective authors, speakers, photographers, and
+Seminar organizers and/or the respective authors, speakers, photographers, and
 other rights holders.
 
 This includes, where protected by applicable law, talk abstracts, speaker
@@ -30,10 +30,10 @@ The Jekyll, Liquid, HTML, and Sass implementation is derived in part from
 available under their respective MIT licenses, reproduced in the `LICENSES/`
 directory.
 
-The software licenses do **not** apply to EMO Talks content, speaker-contributed
+The software licenses do **not** apply to EMO Seminar content, speaker-contributed
 materials, recordings, photographs, or branding.
 
 ## Questions and permissions
 
-For permission to reuse EMO Talks content, contact the EMO Talks organizers and,
+For permission to reuse EMO Seminar content, contact the EMO Seminar organizers and,
 where applicable, the relevant speaker or other rights holder.
