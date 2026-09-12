@@ -17,6 +17,6 @@ The EMO Seminar is organized by [Jerry Anunrojwong](https://jerryanunroj.github.
 
 **Time**: 3:00 PM ET, biweekly on Wednesdays
 
-**Mailing list**: [Join our Google Group here](https://groups.google.com/g/energy-market-opt-seminar) to receive announcements about upcoming talks.
+**Mailing list**: [Join our Google Group here](https://groups.google.com/g/energy-market-opt-seminar) to receive reminders about upcoming talks.
 
 **YouTube channel**: [Watch past talks here](https://www.youtube.com/@emo-seminar)
