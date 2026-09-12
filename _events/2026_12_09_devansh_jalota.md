@@ -3,10 +3,10 @@
 # Keep text values quoted so punctuation remains valid YAML.
 title: "TBA"
 speaker: "Devansh Jalota"
-affiliation: "Georgia institute of Technology"
+affiliation: "Georgia Institute of Technology"
 
 # Optional personal or institutional profile.
-speaker_url: https://sites.google.com/view/devanshjalota?pli=1&authuser=0
+speaker_url: https://sites.google.com/view/devanshjalota
 
 # Change these fields if this talk is rescheduled or shortened.
 # America/New_York supplies EST/EDT automatically; do not add a UTC offset.
