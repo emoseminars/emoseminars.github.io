@@ -20,6 +20,9 @@
       <tbody>
         {%- for talk in include.talks -%}
           {%- assign talk_status = talk.status | default: "scheduled" | strip | downcase -%}
+          {%- assign registration_url = talk.registration_url | default: "" | strip -%}
+          {%- assign join_url = talk.join_url | default: talk.meeting_url | default: "" | strip -%}
+          {%- assign zoom_url = registration_url | default: join_url -%}
           {%- assign recording_url = talk.recording_url | default: "" | strip -%}
           <tr class="talk-row talk-row--{{ talk_status | slugify }}">
             <td class="talk-date" data-label="Date">
@@ -32,7 +35,7 @@
             </td>
             <td class="talk-speaker" data-label="Speaker">{% include speaker-name.html talk=talk %}</td>
             <td class="talk-title-cell" data-label="Title">
-              <a class="talk-title" href="{{ talk.url | relative_url }}">{{ talk.title | escape }}</a>{% unless recording_url == "" %} <a class="talk-video-link" href="{{ recording_url | escape }}" aria-label="Video recording of {{ talk.title | escape }}">[Video]</a>{% endunless %}
+              <a class="talk-title" href="{{ talk.url | relative_url }}">{{ talk.title | escape }}</a>{% unless zoom_url == "" %} <a class="talk-zoom-link" href="{{ zoom_url | escape }}" aria-label="Zoom link for {{ talk.title | escape }}">[Zoom]</a>{% endunless %}{% unless recording_url == "" %} <a class="talk-recording-link" href="{{ recording_url | escape }}" aria-label="Recording of {{ talk.title | escape }}">[Recording]</a>{% endunless %}
             </td>
           </tr>
         {%- endfor -%}

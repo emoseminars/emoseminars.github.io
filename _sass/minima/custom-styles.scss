@@ -548,7 +548,8 @@ a.speaker-name {
   text-decoration-thickness: 0.18em;
 }
 
-.talk-video-link {
+.talk-zoom-link,
+.talk-recording-link {
   margin-left: 0.25rem;
   white-space: nowrap;
   font-size: 0.875rem;

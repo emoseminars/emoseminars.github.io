@@ -45,8 +45,9 @@ and push will refresh the selection.
 - Fill in either `registration_url` or `join_url`, not both. Registration is the
   recommended public default. Never commit a host-only link, start link,
   password, or another private credential; waiting-room settings live in Zoom.
-- Add the YouTube URL to `recording_url` after a talk. The schedule then shows
-  `[Video]` after its title.
+- Add the YouTube URL to `recording_url` after a talk. The schedule shows
+  `[Zoom]` and `[Recording]` after the title whenever the corresponding links
+  are available.
 - `abstract` and `bio` support Markdown.
 - Leave unavailable optional fields blank so the layout hides them cleanly.
 
