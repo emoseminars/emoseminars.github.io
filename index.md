@@ -1,7 +1,7 @@
 ---
 layout: talks
 title: EMO Seminar
-description: "EMO (Energy, Markets, and Optimization) Seminar, a biweekly interdisciplinary webinar series on energy and sustainability"
+description: "EMO (Energy, Markets, and Optimization) Seminar, an interdisciplinary webinar series on energy and sustainability"
 image:
   path: /assets/images/emo-social-card.png
   width: 1200
@@ -9,9 +9,9 @@ image:
   alt: EMO Seminar logo
 ---
 
-Welcome to the EMO (Energy, Markets, and Optimization) Seminar, a biweekly Zoom-based seminar series bringing together energy and sustainability researchers from Operations Management, Operations Research, and Electrical Engineering.
+Welcome to the EMO (Energy, Markets, and Optimization) Seminar, a virtual seminar series bringing together energy and sustainability researchers from Operations Management, Operations Research, and Electrical Engineering.
 
-Addressing emerging challenges in energy and sustainability requires methodological tools and domain knowledge that span multiple research communities. EMO Seminar provides a cross-community platform where rigorous methodology meets real-world impact, spotlighting advances in relevant methodologies such as market design, optimization, stochastic modeling, and network analysis, as well as innovative ways that use them to address challenges in energy and sustainability.
+Addressing emerging challenges in energy and sustainability requires methodological tools and domain knowledge that span multiple research communities. EMO Seminar provides a cross-community platform where rigorous methodology meets real-world impact, featuring advances in relevant methodologies such as market design, optimization, stochastic modeling, and network analysis, as well as innovative ways that use them to address challenges in energy and sustainability.
 
 The EMO Seminar is organized by [Jerry Anunrojwong](https://jerryanunroj.github.io), [Cheng Guo](https://chengg04.github.io), and [Junjie Qin](https://engineering.purdue.edu/people/junjie.qin.1).
 
