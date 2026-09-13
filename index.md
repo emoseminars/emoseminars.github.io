@@ -15,7 +15,7 @@ Addressing emerging challenges in energy and sustainability requires methodologi
 
 The EMO Seminar is organized by [Jerry Anunrojwong](https://jerryanunroj.github.io), [Cheng Guo](https://chengg04.github.io), and [Junjie Qin](https://engineering.purdue.edu/people/junjie.qin.1).
 
-**Time**: 3:00 PM ET, biweekly on Wednesdays
+**Time**: 3:00 PM - 4:00 PM ET, biweekly on Wednesdays
 
 **Mailing list**: [Join our Google Group here](https://groups.google.com/g/energy-market-opt-seminar) to receive reminders about upcoming talks.
 
