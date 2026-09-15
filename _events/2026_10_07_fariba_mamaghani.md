@@ -2,11 +2,11 @@
 # Replace the TBA values as speaker details become available.
 # Keep text values quoted so punctuation remains valid YAML.
 title: "TBA"
-speaker: "TBA"
-affiliation: "TBA"
+speaker: "Fariba Mamaghani"
+affiliation: "Tulane University"
 
 # Optional personal or institutional profile.
-speaker_url:
+speaker_url: https://freeman.tulane.edu/faculty-research/management-science/fariba-farajbakhsh-mamaghani
 
 # Change these fields if this talk is rescheduled or shortened.
 # America/New_York supplies EST/EDT automatically; do not add a UTC offset.
@@ -19,7 +19,7 @@ semester: fall-2026
 
 # Placeholder speaker image shown on the website.
 # Replace this path when a real headshot arrives.
-speaker_image: /assets/images/speaker-placeholder.svg
+speaker_image: /assets/images/ffarajbakhshmamaghani.jpg
 
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.
