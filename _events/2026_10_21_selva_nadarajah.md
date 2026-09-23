@@ -24,7 +24,7 @@ speaker_image: /assets/images/selva_nadarajah.jpg
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.
 registration_url:
-join_url: https://yale.zoom.us/j/91931480042
+join_url: https://clemson.zoom.us/j/93228737880?pwd=FRryx1fQ7Icmc3dgaaMRV9u6m2M1Nv.1
 
 # Add the YouTube recording after the talk; leave blank beforehand.
 recording_url:
