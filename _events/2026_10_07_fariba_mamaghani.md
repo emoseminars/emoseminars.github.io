@@ -24,7 +24,7 @@ speaker_image: /assets/images/ffarajbakhshmamaghani.jpg
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.
 registration_url:
-join_url:
+join_url: https://clemson.zoom.us/j/97986668304?pwd=pgMg266sjs3wbNa2C9T19atWwJeFGi.1
 
 # Add the YouTube recording after the talk; leave blank beforehand.
 recording_url:
