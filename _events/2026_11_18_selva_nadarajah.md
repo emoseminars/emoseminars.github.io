@@ -1,7 +1,7 @@
 ---
 # Replace the TBA values as speaker details become available.
 # Keep text values quoted so punctuation remains valid YAML.
-title: "TBA"
+title: "TBA (rescheduled from Oct 21)"
 speaker: "Selva Nadarajah"
 affiliation: "University of Illinois at Chicago"
 
@@ -10,7 +10,7 @@ speaker_url: https://www.selva-nadarajah.com
 
 # Change these fields if this talk is rescheduled or shortened.
 # America/New_York supplies EST/EDT automatically; do not add a UTC offset.
-talk_date: "2026-10-21"
+talk_date: "2026-11-18"
 start_time: "3:00 PM"
 duration_minutes: 60
 
@@ -24,7 +24,7 @@ speaker_image: /assets/images/selva_nadarajah.jpg
 # Public Zoom access: fill in ONE field, or leave both blank.
 # Registration is the recommended default for a public, high-attendance event.
 registration_url:
-join_url: https://clemson.zoom.us/j/93228737880?pwd=FRryx1fQ7Icmc3dgaaMRV9u6m2M1Nv.1
+join_url: https://yale.zoom.us/j/91931480042
 
 # Add the YouTube recording after the talk; leave blank beforehand.
 recording_url:
