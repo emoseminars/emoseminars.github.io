@@ -1,7 +1,7 @@
 ---
 # Replace the TBA values as speaker details become available.
 # Keep text values quoted so punctuation remains valid YAML.
-title: "TBA (rescheduled from Oct 21)"
+title: "TBA (rescheduled from October 21)"
 speaker: "Selva Nadarajah"
 affiliation: "University of Illinois at Chicago"
 
