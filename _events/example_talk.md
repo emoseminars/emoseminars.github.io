@@ -36,11 +36,11 @@ recording_url:
 status: scheduled
 
 # Keep every line of the abstract indented by two spaces.
-abstract: >-
+abstract: |-
   Replace this text with the talk abstract. Markdown formatting is supported.
 
 # Keep every line of the biography indented by two spaces.
-bio: >-
+bio: |-
   Replace this text with a short speaker biography. Markdown formatting is
   supported.
 ---
