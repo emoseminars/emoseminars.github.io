@@ -27,7 +27,7 @@ registration_url:
 join_url: https://yale.zoom.us/j/91931480042
 
 # Add the YouTube recording after the talk; leave blank beforehand.
-recording_url:
+recording_url: https://www.youtube.com/watch?v=FoGvjPETHQI&t=29s
 
 # Usually keep scheduled. Use cancelled/postponed only for a public notice.
 # Delete or reschedule the file instead when no public label is wanted.
