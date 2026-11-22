@@ -5,6 +5,9 @@ url: "https://emoseminars.github.io"
 baseurl: ""
 repository: emoseminars/emoseminars.github.io
 
+# Google tag container; included only in production builds.
+google_tag_id: "GTM-52HNG2RF"
+
 author:
   name: EMO Seminar organizers
 
